@@ -17,7 +17,7 @@ import numpy as np
 
 # import some data to play with
 iris = datasets.load_iris()
-x = iris.data[:, :2]  # we only take the first two features.
+X = iris.data[:, :2]  # we only take the first two features.
 y = iris.target
 
 #Comos estamos utilizando solo dos variables podemos pintar los datos en un scatterplot, diferenciando en función de la clase. 
