@@ -6,6 +6,9 @@ Created on Thu Jan 10 17:01:02 2019
 @author: Ruman
 """
 
+import numpy as np
+
+
 def stepGradient(par, x, y, learningRate):
     b_0_gradient = 0
     b_1_gradient = 0
@@ -40,3 +43,4 @@ trX = np.linspace(-2, 2, 101)
 trY = 3 + 2 * trX + np.random.randn(*trX.shape) * 0.33
 
 print(fitGradient([1,1], trX, trY, 0.05))
+
