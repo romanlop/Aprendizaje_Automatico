@@ -25,7 +25,7 @@ y = iris.target
 plt.title('Datos de entrenamiento')
 plt.xlabel('Sepal length')
 plt.ylabel('Sepal width')
-plt.scatter(x[:,0], x[:,1], c=y)
+plt.scatter(X[:,0], X[:,1], c=y)
 plt.show()
 
 
@@ -50,7 +50,7 @@ plt.show()
 #Entrenamos el modelo
 model = KNeighborsClassifier(15)
 # Entrenamos el modelo:
-model.fit(x, y)
+model.fit(X, y)
 
 # Version clara y oscura de los coloes
 cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
@@ -71,7 +71,7 @@ Z = model.predict(np.c_[xx.ravel(), yy.ravel()]) #https://docs.scipy.org/doc/num
 Z = Z.reshape(xx.shape)  
 
 plt.pcolormesh(xx, yy, Z, cmap = cmap_light)
-plt.scatter(x[:, 0], x[:, 1], c=y, cmap = cmap_bold)
+plt.scatter(X[:, 0], X[:, 1], c=y, cmap = cmap_bold)
 #¡plt.xlim(xx.min(), xx.max())
 plt.ylim(yy.min(), yy.max())  
 plt.show()
