@@ -16,19 +16,18 @@ from sklearn.tree import DecisionTreeClassifier, export_graphviz
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_curve, auc
 import pydotplus
-from IPython.display import Image  
 
 
 # import some data to play with
 cancer = datasets.load_breast_cancer()
-X = cancer.data  # we only take the first two features.
+X = cancer.data
 y = cancer.target
 
 
 #Comos estamos utilizando solo dos variables podemos pintar los datos en un scatterplot, diferenciando en función de la clase. 
-plt.title('Datos de entrenamiento')
-plt.xlabel('Sepal length')
-plt.ylabel('Sepal width')
+plt.title('Datos de entrenamiento en base a dos de las variables')
+plt.xlabel('X0')
+plt.ylabel('X1')
 plt.scatter(X[:,0], X[:,1], c=y)
 plt.show()
 
