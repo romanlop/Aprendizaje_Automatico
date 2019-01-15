@@ -15,7 +15,9 @@ from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_curve, auc
-import numpy as np
+import pydotplus
+from IPython.display import Image  
+
 
 # import some data to play with
 cancer = datasets.load_breast_cancer()
@@ -86,14 +88,20 @@ plt.show()
 #Es la importancia de cada variable independiente sobre la dependiente
 print(dt_classifier_improved.feature_importances_)
 
+
 for i in range(3):
     print('##################################################################')
 #Vamos a tratar de acceder/almacenar la información del modelo que acabamos de construir y pintar el árbol.
 
 export_graphviz(dt_classifier_improved, 
-                out_file='arbol.dot', 
+                out_file='arbol.dot', #dot es plantilla de Word.
                 class_names=cancer.target_names,
                 feature_names=cancer.feature_names,
                 impurity=False,
                 filled=True)
+
+with open('arbol.dot') as f:
+    dot_graph=f.read()
+graph = pydotplus.graph_from_dot_data(dot_graph) 
+graph.write_pdf("cancer.pdf")
 
