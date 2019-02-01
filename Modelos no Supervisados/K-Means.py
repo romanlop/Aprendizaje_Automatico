@@ -44,6 +44,7 @@ plt.show()
 kmeans = KMeans(n_clusters = 3,
                 random_state = 1).fit(blobs_3)
 
+
 #La clase de cada uno de los registros se obtiene utilizando el método predict 
 #del objeto entrenado en el conjunto de datos. Finalmente, se representa la 
 #muestra de datos estableciendo un color en función del clúster asignado en la predicción.
