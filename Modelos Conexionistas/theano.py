@@ -6,7 +6,8 @@ Created on Sun Feb 17 10:47:51 2019
 @author: Ruman
 """
 
-import theano.tensor as T
+import theano
 
 
 
+theano.tensor.scalar('x')
